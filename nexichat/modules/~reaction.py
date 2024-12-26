@@ -1,7 +1,6 @@
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from nexichat import nexichat
 
 # List of emojis supported by Telegram for reactions
 SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "🔥", "👏"]  # Add more if needed, ensure they are supported
