@@ -3,8 +3,7 @@ from pyrogram.types import Message
 from nexichat import nexichat
 
 # Use only emojis supported by Telegram
-SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "🔥", "😢", "😡", "🤩", "👏", "😎", "🙌",
-                    "🎉", "💪", "🤔", "😅", "😊", "👀", "🎶", "🌟", "💯"]
+SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "😢", "😡", "👏", "🔥", "🤩", "😮", "🙌"]
 
 @nexichat.on_message(filters.incoming)
 async def react_to_messages(client: Client, message: Message):
