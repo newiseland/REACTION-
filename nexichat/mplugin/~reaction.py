@@ -5,8 +5,6 @@ from pyrogram.types import Message
 # List of emojis supported by Telegram for reactions
 SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "🔥", "👏"]  # Add more if needed, ensure they are supported
 
-# Create the bot client
-app = nexichat.Client("reaction_bot")
 
 @app.on_message(filters.incoming)
 async def react_to_messages(client: Client, message: Message):
