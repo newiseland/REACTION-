@@ -1,13 +1,15 @@
-import asyncio
+
+
 from pyrogram import Client, filters
 from pyrogram.types import Message
+import random
+
 
 # List of emojis supported by Telegram for reactions
 SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "🔥", "👏"]  # Add more if needed, ensure they are supported
 
 
-
-@app.on_message(filters.incoming)
+@Client.on_message(filters.incoming)
 async def react_to_messages(client: Client, message: Message):
     try:
         for emoji in SUPPORTED_EMOJIS:
@@ -15,4 +17,4 @@ async def react_to_messages(client: Client, message: Message):
             await asyncio.sleep(0.5)  # Optional: Add a small delay to avoid rate limiting
     except Exception as e:
         print(f"Failed to react to message: {e}")
-
+        
