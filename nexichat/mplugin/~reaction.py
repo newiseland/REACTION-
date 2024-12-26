@@ -1,13 +1,14 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-import random
+from nexichat import nexichat
 
-EMOJIS = ["🥰", "❤️", "😁", "💋", "😱", "🤣", "😘", "❤️‍🔥", "👌", "🫡", "😍"]
+# Use only emojis supported by Telegram
+SUPPORTED_EMOJIS = ["👍", "❤️", "😂", "😢", "😡", "👏", "🔥", "🤩", "😮", "🙌"]
 
-@Client.on_message(filters.incoming)
+@nexichat.on_message(filters.incoming)
 async def react_to_messages(client: Client, message: Message):
     try:
-        random_emoji = random.choice(EMOJIS)
-        await message.react(random_emoji)
+        for emoji in SUPPORTED_EMOJIS:
+            await message.react(emoji)
     except Exception as e:
         print(f"Failed to react to message: {e}")
